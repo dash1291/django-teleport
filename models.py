@@ -1,7 +1,7 @@
 from django.db import models
 
 class Directory(models.Model):
-	id = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     path = models.TextField()
 
     def __repr__(self):
