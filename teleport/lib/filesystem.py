@@ -3,7 +3,9 @@ import os.path
 import shutil
 from datetime import date
 
-from settings import TEMP_FILE_STORE
+from django.conf import settings
+
+TEMP_FILE_STORE = settings.TEMP_FILE_STORE
 
 def parent_path(path):
     return os.path.dirname(path)

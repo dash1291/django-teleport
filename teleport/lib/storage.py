@@ -1,4 +1,5 @@
 from django.conf import settings as settings
+
 from teleport.lib.storage_adapters import storage_local
 
 def get_adapter():
