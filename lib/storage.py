@@ -1,9 +1,10 @@
-from settings import teleport
-from teleport.lib.storage_adapters import *
+from django.conf import settings as settings
+from teleport.lib.storage_adapters import storage_local
 
 def get_adapter():
-	storage_type = teleport['storage_type']
+    teleport_settings = settings.TELEPORT
+    storage_type = teleport_settings['storage_type']
 
-	if storage_type == 'local':
-		storage_path = teleport['storage_path']
-		return storage_local
+    if storage_type == 'local':
+        storage_path = teleport_settings['storage_path']
+        return storage_local.StorageLocal(storage_path)
