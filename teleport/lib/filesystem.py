@@ -14,7 +14,7 @@ def file_name(path):
     return os.path.basename(path)
 
 def save_from_upload(path, file_obj):
-    temp_path = TEMP_FILE_STORE + '/' + file_name(path)
+    temp_path = os.path.join(TEMP_FILE_STORE, file_name(path))
     fp = open(temp_path, 'w')
     for chunk in file_obj.chunks():
         fp.write(chunk)

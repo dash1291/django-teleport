@@ -7,7 +7,7 @@ class StorageLocal():
 
     def upload_file(self, local_path, remote_path):
         APP_STORAGE_PATH = self.storage_path
-        dest = os.path.join(APP_STORAGE_PATH + 'files' + remote_path)
+        dest = os.path.join(APP_STORAGE_PATH, 'files', remote_path)
         if not os.path.exists(os.path.dirname(dest)):
             os.makedirs(os.path.dirname(dest))
         shutil.move(local_path, dest)
