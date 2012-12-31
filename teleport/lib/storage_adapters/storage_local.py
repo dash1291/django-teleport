@@ -18,3 +18,7 @@ class StorageLocal():
             os.path.basename(path)), 'zip',
             os.path.join(APP_STORAGE_PATH, 'files', path))
         return os.path.join('archives', os.path.basename(path) + '.zip')
+
+    def delete_file(self, remote_path):
+        abs_path = os.path.join(self.storage_path, files, remote_path)
+        os.remove(abs_path)
