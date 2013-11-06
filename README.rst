@@ -12,6 +12,7 @@ For the client, see teleport-client_
 Installation
 ------------
 
+
 ``pip install -e git+https://github.com/dash1291/django-teleport#egg=django-teleport``
 
 After it has been installed, add ``teleport`` to the ``INSTALLED_APPS`` setting of your Django project and run ``python manage.py syncdb``, which will create some required models.
@@ -21,7 +22,7 @@ Configuration
 
 For a minimal configuration that uses local filesystem for storage, add the following to your ``settings.py`` file.
 
-::
+.. code-block:: python
 
     TELEPORT = {
         'api_secret': 'a random string',
@@ -33,7 +34,7 @@ For a minimal configuration that uses local filesystem for storage, add the foll
 
 You will also need to configure your URLConf to pick teleport urls. For that you can do something like this in your ``urls.py``:
 
-::
+.. code-block:: python
 
     from teleport.urls import urlpatterns as teleport_patterns
 
